@@ -10,6 +10,11 @@ namespace CustomList
     {
         static void Main(string[] args)
         {
+            List<int> test = new List<int>();
+            test.Add(5);
+            test.RemoveAt(0);
+            Console.ReadLine();
+           
         }
     }
 }
