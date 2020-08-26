@@ -54,7 +54,7 @@ namespace CustomListUnitTest
         //    customList.Add(value3);
         //    customList.Add(value4);
         //    customList.Add(value5);
-        //    actual = customList[2];
+        //    actual = customList[0];
 
         //    Assert.AreEqual(expected, actual);
         //}
