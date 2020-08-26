@@ -86,30 +86,6 @@ namespace CustomList
             }
             _items = tempArray;
             _count--;
-            //int pos = 0;
-            //T[] tempArray = new T[_capacity];
-            //int counter = 0;
-            //while(_items[counter].Equals(item) == true)
-            //{
-            //    if (_items[counter].Equals(item))
-            //    {
-            //        pos = counter;
-            //        continue;
-            //    }
-            //    else
-            //    {
-            //        counter++;
-            //    }
-                
-            //}
-            //for(int i = 0; i==pos; i++)
-            //{
-            //    Add(_items[i]);
-            //}
-            //for(int i = pos+1; i<_items.Length; i++)
-            //{
-            //    Add(_items[i]);
-            //}
         }
     }
 }
