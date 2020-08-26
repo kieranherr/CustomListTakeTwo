@@ -30,6 +30,34 @@ namespace CustomList
                 _capacity = value;
             }
         }
+        public T this[int i]
+        {
+            get
+            {
+                if (i <= _count && i >= 0)
+                {
+                    return _items[i];
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                    
+                }
+            }
+            set
+            {
+                if (i <= _count && i >= 0)
+                {
+                    _items[i] = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+
+                }
+                
+            }
+        }
         public CustomList()
         {
             _count = 0;
@@ -87,5 +115,6 @@ namespace CustomList
             _items = tempArray;
             _count--;
         }
+      
     }
 }

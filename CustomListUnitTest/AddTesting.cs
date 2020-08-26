@@ -37,27 +37,27 @@ namespace CustomListUnitTest
 
             Assert.AreEqual(expected, actual);
         }
-        //[TestMethod]
-        //public void Add_TempArray_Index()
-        //{
-        //    CustomList<int> customList = new CustomList<int>();
-        //    int value1 = 4;
-        //    int value2 = 5;
-        //    int value3 = 7;
-        //    int value4 = 9;
-        //    int value5 = 12;
-        //    int expected = 7;
-        //    int actual;
+        [TestMethod]
+        public void Add_TempArray_Index()
+        {
+            CustomList<int> customList = new CustomList<int>();
+            int value1 = 4;
+            int value2 = 5;
+            int value3 = 7;
+            int value4 = 9;
+            int value5 = 12;
+            int expected = 7;
+            int actual;
 
-        //    customList.Add(value1);
-        //    customList.Add(value2);
-        //    customList.Add(value3);
-        //    customList.Add(value4);
-        //    customList.Add(value5);
-        //    actual = customList[0];
+            customList.Add(value1);
+            customList.Add(value2);
+            customList.Add(value3);
+            customList.Add(value4);
+            customList.Add(value5);
+            actual = customList[2];
 
-        //    Assert.AreEqual(expected, actual);
-        //}
+            Assert.AreEqual(expected, actual);
+        }
         [TestMethod]
         public void Add_AddToList_Count10()
         {

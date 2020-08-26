@@ -13,6 +13,7 @@ namespace CustomList
             List<int> test = new List<int>();
             test.Add(5);
             test.Remove(0);
+            Console.WriteLine(test[2]);
             Console.ReadLine();
            
         }

@@ -81,27 +81,27 @@ namespace CustomListUnitTest
 
             Assert.AreEqual(expected, actual);
         }
-        //[TestMethod]
-        //public void Remove_RemoveFromList_Index0()
-        //{
-        //    CustomList<int> customList = new CustomList<int>();
-        //    int value1 = 6;
-        //    int value2 = 5;
-        //    int value3 = 7;
-        //    int value4 = 9;
-        //    int expected = 0;
-        //    int actual;
+        [TestMethod]
+        public void Remove_RemoveFromList_Index0()
+        {
+            CustomList<int> customList = new CustomList<int>();
+            int value1 = 6;
+            int value2 = 5;
+            int value3 = 7;
+            int value4 = 9;
+            int expected = 5;
+            int actual;
 
-        //    customList.Add(value1);
-        //    customList.Add(value2);
-        //    customList.Add(value3);
-        //    customList.Add(value4);
+            customList.Add(value1);
+            customList.Add(value2);
+            customList.Add(value3);
+            customList.Add(value4);
 
-        //    customList.Remove(value1);
+            customList.Remove(value1);
 
-        //    actual = customList.IndexOf(value2);
+            actual = customList[0];
 
-        //    Assert.AreEqual(expected, actual);
-        //}
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
