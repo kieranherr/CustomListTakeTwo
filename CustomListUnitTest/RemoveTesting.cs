@@ -40,7 +40,7 @@ namespace CustomListUnitTest
             customList.Add(value1);
 
             customList.Remove(value1);
-            customList.Remove(value1);
+
             actual = customList.Capacity;
 
             Assert.AreEqual(expected, actual);

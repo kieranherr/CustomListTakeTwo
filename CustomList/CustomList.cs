@@ -54,24 +54,62 @@ namespace CustomList
         }
         public void Remove(T item)
         {
-            int pos = 0;
+            bool valueFound = false;
+            int j = 0;
+            //1. Take in value ^
+            //2. Iterate thru current collection to find any values that equal the value passed in
+            //3a. If we find that value, Figure out what to do with it(without calling a remove method)
+            //3b. How to access and move the other values into their new correct spots
             T[] tempArray = new T[_capacity];
-            for(int i = 0; i<_items.Length; i++)
+            for(int i = 0; i<_count; i++)
             {
-                if (_items[i].Equals(item))
+                if (!valueFound)
                 {
-                    pos = i;
+                    if (_items[i].Equals(item))
+                    {
+                        valueFound = true;
+                        j++;
+                        continue;
+                    }
+                    else if(_items[i].Equals(item) && i == 0)
+                    {
+                        valueFound = true;
+                        j++;
+                        continue;
+                    }
+                    tempArray[j] = _items[i];
+                    j++;
+                    continue;
                 }
+                tempArray[j - 1] = _items[i];
+                j++;
             }
-            for(int i = 0; i==pos; i++)
-            {
-                Add(_items[i]);
-            }
-            for(int i = pos+1; i<_items.Length; i++)
-            {
-                Add(_items[i]);
-            }
-
+            _items = tempArray;
+            _count--;
+            //int pos = 0;
+            //T[] tempArray = new T[_capacity];
+            //int counter = 0;
+            //while(_items[counter].Equals(item) == true)
+            //{
+            //    if (_items[counter].Equals(item))
+            //    {
+            //        pos = counter;
+            //        continue;
+            //    }
+            //    else
+            //    {
+            //        counter++;
+            //    }
+                
+            //}
+            //for(int i = 0; i==pos; i++)
+            //{
+            //    Add(_items[i]);
+            //}
+            //for(int i = pos+1; i<_items.Length; i++)
+            //{
+            //    Add(_items[i]);
+            //}
         }
     }
 }
