@@ -58,6 +58,34 @@ namespace CustomList
                 
             }
         }
+        public static CustomList<T> operator +(CustomList<T> list1, CustomList<T> list2)
+        {
+            CustomList<T> tempArray = new CustomList<T>();
+            for(int i = 0; i<list1.Count; i++)
+            {
+                tempArray.Add(list1[i]);
+            }
+            for (int i = 0; i < list2.Count; i++)
+            {
+                tempArray.Add(list2[i]);
+            }
+            return tempArray;
+
+        }
+        public static CustomList<T> operator -(CustomList<T> list1, CustomList<T> list2)
+        {
+            for (int i = 0; i < list2.Count; i++)
+            {
+                for (int j = 0; j < list1.Count; j++)
+                {
+                    if(list1[j].Equals(list2[i]))
+                    {
+                        list1.Remove(list2[i]);
+                    }
+                }
+            }
+            return list1;
+        }
         public CustomList()
         {
             _count = 0;
