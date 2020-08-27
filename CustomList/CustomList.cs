@@ -1,17 +1,52 @@
 ﻿using System;
+using System.CodeDom.Compiler;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CustomList
 {
-    public class CustomList<T>
+    public class CustomList<T> : IEnumerable
     {
         T[] _items;
         private int _capacity;
         private int _count;
 
+        public IEnumerator GetEnumerator()
+        {
+            for(int i = 0; i<_count; i++)
+            {
+                yield return _items[i];
+            }
+        }
+
+
+
+        public void Zip(CustomList<T> list1)
+        {
+            // tempArray[0] = _items[0]
+            // temparray[1] = list1[0]
+            //tempArray[2] = _items[1]
+            //tempArray[3] =  list1[1]\
+            int j = 0;
+            T[] tempArray = new T[_capacity + list1.Capacity];
+            for(int i =0; i<_count; i++)
+            {
+                tempArray[j] = _items[i];
+                j++;
+               
+                tempArray[j] = list1[i];
+                j++;
+                
+            }
+            _items = tempArray;
+            _count = _count + list1.Count;
+            _capacity = _capacity + list1.Capacity;
+        }
         public int Count
         {
             get
@@ -86,6 +121,10 @@ namespace CustomList
             }
             return list1;
         }
+        public override string ToString()
+        {
+            return String.Concat(_items);
+        }
         public CustomList()
         {
             _count = 0;
@@ -143,6 +182,7 @@ namespace CustomList
             _items = tempArray;
             _count--;
         }
-      
+
+       
     }
 }
